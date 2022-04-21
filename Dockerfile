@@ -4,7 +4,7 @@ ENV PHOENIX_VERSION=1.6.6
 
 RUN \
     apk add --no-cache --update \
-      bash
+      bash npm
 
 RUN \
     apk add --no-cache \
