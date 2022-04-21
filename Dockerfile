@@ -8,7 +8,7 @@ RUN \
 
 RUN \
     apk add --no-cache \
-      git python3 curl nodejs
+      git python3 curl nodejs inotify-tools
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
