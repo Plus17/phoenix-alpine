@@ -1,10 +1,10 @@
-FROM hexpm/elixir:1.13.4-erlang-23.3.4.9-alpine-3.15.0
+FROM hexpm/elixir:1.14.0-erlang-24.0.2-alpine-3.15.0
 
-ENV PHOENIX_VERSION=1.6.6
+ENV PHOENIX_VERSION=1.6.12
 
 RUN \
     apk add --no-cache --update \
-      bash npm
+      bash make gcc libc-dev npm
 
 RUN \
     apk add --no-cache \
