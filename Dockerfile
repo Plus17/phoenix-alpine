@@ -2,6 +2,8 @@ FROM hexpm/elixir:1.14.0-erlang-24.0.2-alpine-3.15.0
 
 ENV PHOENIX_VERSION=1.6.12
 
+RUN apk add --update qemu-x86_64
+
 RUN \
     apk add --no-cache --update \
       bash make gcc libc-dev npm
