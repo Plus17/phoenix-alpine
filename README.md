@@ -5,15 +5,17 @@ Current versions:
 
 **Alpine** 3.15.0
 
-**Elixir** 1.13.4
+**Elixir** 1.14.0
 
-**Erlang/OTP** 23.3.4.9
+**Erlang/OTP** 24.0.2
 
-**Phoenix** 1.6.6
+**Phoenix** 1.6.12
 
 **Node** 16.14.2
 
 Dockerize your phoenix project quickly with docker-compose with this image.
+
+For a complete example see [Phoenix Boilerplate](https://github.com/Plus17/phoenix-boilerplate).
 
 Example:
 
@@ -27,7 +29,7 @@ volumes:
 
 services:
   phx:
-    image: plus17/phoenix-alpine:1.13.4-1.6.6
+    image: plus17/phoenix-alpine:1.14.0-1.6.12
     ports:
       - ${HTTP_PORT:-4000}:${HTTP_PORT:-4000}
     volumes:
@@ -37,10 +39,8 @@ services:
       - node_modules:/app/src/assets/node_modules
     depends_on:
       - postgres
-    environment:
-      - MIX_ENV=${ENV:-dev}
-      - POSTGRES_URL=ecto://postgres:postgres@postgres/your_app_name_${ENV:-dev}
-      - HTTP_PORT=${HTTP_PORT:-4000}
+    env_file:
+      - .env
     working_dir: /app/src
 
   postgres:
